@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+   <meta name="theme-color" content="#008000">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Submit Button</title>
+<style>
+/* Sesuaikan gaya CSS sesuai kebutuhan Anda */
+#photo-container {
+  position: relative;
+}
+
+#photo-container img {
+  max-width: 100%;
+  height: auto;
+  margin-top: -8px;
+}
+
+.new-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1; /* Pastikan gambar baru muncul di atas gambar sebelumnya */
+  display: none; /* Awalnya sembunyikan gambar baru */
+}
+
+.button {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 110px;
+  background-color: #008000;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.bank-info {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.textBox {
+  width: 86%; /* Sesuaikan lebarnya sesuai kebutuhan Anda */
+  margin: 0 auto; /* Ini akan membuat kotak kolom berada di tengah */
+  display: block; /* Agar kotak kolom memiliki lebar yang sama di sebelah kiri dan kanannya */
+  /* Tengahkan angka di dalam kotak kolom */
+  text-align: center;
+  /* Tengahkan angka di dalam kotak kolom */
+  padding: 10px;
+  border-radius: 13px;
+  color: #ffffff;
+  background-color: #008000;
+  font-size: 18px;
+  margin-top:20px;
+}
+</style>
+</head>
+<body>
+  <div id="photo-container">
+    <img src="https://i.ibb.co/4ZPJQc1/Screenshot-20240403-233952-Kredit-Digital.jpg" alt="Foto">
+  </div>
+  <button class="button" onclick="showNewPhoto()">Rek Pembayaran</button>
+
+  <script>
+    // Ketika tombol "Rek Pembayaran" diklik
+    function showNewPhoto() {
+      // Sembunyikan tombol "Rek Pembayaran"
+      var submitButton = document.querySelector('.button');
+      submitButton.style.display = 'none';
+
+      // Mengambil elemen gambar baru
+      var newPhoto = document.createElement('img');
+      newPhoto.src = 'https://i.ibb.co/s56BHDc/Screenshot-20240404-115037-Kredit-Digital.jpg';
+
+      // Menambahkan kontainer untuk kotak kolom
+      var textBoxContainer = document.createElement('div');
+
+      // Mengambil kontainer gambar
+      var photoContainer = document.getElementById('photo-container');
+
+      // Menambahkan gambar baru ke dalam kontainer
+      photoContainer.appendChild(newPhoto);
+
+      // Menghapus gambar sebelumnya (jika ada)
+      var oldPhoto = photoContainer.querySelector('img:not(.new-photo)');
+      if (oldPhoto) {
+        oldPhoto.remove();
+      }
+
+      // Menampilkan gambar baru
+      newPhoto.style.display = 'block';
+
+      var bankInfo = document.createElement('div');
+      bankInfo.classList.add('bank-info');
+      bankInfo.innerHTML = 'No REK Bank BRI <br> A/n TRI USAHA BERKAT<br>';
+      photoContainer.appendChild(bankInfo);
+
+      // Menambahkan kotak kolom hanya setelah tombol diklik
+      var textBox = document.createElement('input');
+      textBox.type = 'text';
+      
+      // Menggunakan fungsi addSpacingToNumber untuk menambahkan spasi pada angka
+      textBox.value = addSpacingToNumber('10352081230808037');
+      textBox.readOnly = true;
+      textBox.classList.add('textBox');
+      textBoxContainer.appendChild(textBox);
+      photoContainer.appendChild(textBoxContainer);
+    }
+
+    // Fungsi untuk menambahkan spasi setiap 4 digit
+    function addSpacingToNumber(number) {
+      return number.toString().replace(/\B(?=(\d{4})+(?!\d))/g, " ");
+    }
+  </script>
+</body>
+</html>

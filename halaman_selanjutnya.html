@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+ <meta name="theme-color" content="#008000">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foto</title>
+<style>
+.blue-text {
+  color: blue;
+  font-size: 13px;
+  margin-right:-8px;
+  margin-left:7px;
+  font-weight:bold;
+  position:center;
+  
+}
+    img {
+        width: 100%;
+        height: auto;
+    }
+    .button {
+        display: inline-block;
+        padding: 10px 136px; /* Lebar padding disesuaikan */
+        background-color: #008000;
+        color: #fff;
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 20px;
+        font-weight: bold;
+        font-size: 12px;
+        padding-bottom:13px;
+    }
+    .spaced-text {
+    letter-spacing: 1px; /* Sesuaikan jumlah spasi sesuai kebutuhan */
+    font-size: 13px;
+    font-weight: bold;
+    margin-top:-20px;
+    color: #696969;
+}
+
+</style>
+</head>
+<body>
+<div style="text-align: center;">
+    <img src="https://i.ibb.co/ydv9JDv/Screenshot-20240403-225519-Pixel-Lab.jpg" alt="Foto">
+    <br>
+    <p class="spaced-text">Jumlah Pembayaran&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rp. 2.100.000</p>
+    <button class="button" onclick="redirectToPayPage()">Pembayaran</button>
+</div>
+
+<script>
+    function redirectToPayPage() {
+        window.location.href = "rek.html"; // Tombol pertama menuju bayar.html
+    }
+
+    function redirectToPayPage2() {
+        window.location.href = "bayar2.html"; // Tombol kedua menuju bayar2.html
+    }
+</script>
+
+</body>
+</html>

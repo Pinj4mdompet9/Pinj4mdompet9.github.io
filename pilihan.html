@@ -4,24 +4,51 @@
 <meta charset="UTF-8">
 <meta name="theme-color" content="#008000">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PINJAMAN SAYA</title>
+<title>PINJAMAN-SAYA</title>
 <style>
-#gambar-atas {
-      margin-bottom: 20px;
-      padding:-180%;
-      margin-top:-8px;
-      left:300px;
-    }
+  .container {
+    background-color: #f0ffff;
+    padding: 15px;
+    width: 352px;
+    margin-left: -7px;
+    display: flex;
+    margin-top: -8px;
+    align-items: center;
+    border-bottom: 5px solid #008000; /* garis hijau tua */
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Jarak antara logo dan teks */
+  }
+  
+  .logo {
+    width: 50px; /* Ukuran logo */
+    height: auto;
+    margin-right: 10px; /* Jarak antara logo dan garis bawah */
+    margin-left: 20px; /* Geser logo lebih ke kiri */
+  }
+  
+  .nama {
+    font-size: 20px; /* Ukuran teks nama yang lebih kecil */
+    color: #00090; /* Warna teks hitam */
+  }
 
-    #gambar-atas img {
-      width: 100%;
-      object-fit: cover;
-      max-height: 300px;
-      top:20px
-      height:-80px;
-      position:relative;
-    }
-.menu {
+  .garis-bawah, .box-lapisan {
+    flex-grow: 10; /* Memungkinkan elemen untuk menyesuaikan lebar yang tersisa */
+    height: 10px; /* Tinggi box lapisan */
+    background-color: #f0ffff; /* Warna lapisan hijau muda */
+  }
+  
+  .box-lapisan {
+    margin-top: -10px; /* Mendorong lapisan hijau ke atas */
+    margin-bottom: -10px; /* Mendorong lapisan hijau ke atas */
+    margin-right: -10px; /* Memperpanjang lapisan hijau ke kanan */
+    margin-left: -10px; /* Memperpanjang lapisan hijau ke kiri */
+  }
+  
+  .menu {
       display: flex;
       flex-direction: column;
     }
@@ -37,7 +64,7 @@
       text-decoration: none; /* Menghapus tanda garis bawah */
       color: inherit; /* Menggunakan warna teks bawaan */
       border-radius:8px;
-      margin-top:8px;
+      margin-top:11px;
     }
 
     .menu-item:first-child {
@@ -115,10 +142,17 @@
 </style>
 </head>
 <body>
-  <div id="gambar-atas">
-    <img src="https://i.ibb.co/j4r974v/IMG-20240426-WA0003.jpg" alt="Gambar Atas">
+<div class="container">
+  <div class="logo-container">
+    <div class="box-lapisan"></div>
+    <img class="logo" src="https://i.ibb.co/PtwMwVv/1000006288-removebg-preview.png" alt="Logo">
   </div>
-  <div class="overlay">
+  <div class="nama">
+    ABIGAEL IMEI ANGGERIANA
+  </div>
+  <div class="garis-bawah"></div>
+</div><br>
+<div class="overlay">
   <div class="content">
     <p>Total Yang Perlu Pembayaran</p>
     <h2>Rp. 2.100.000</h2>
@@ -196,6 +230,5 @@ function showLoading(menuItem) {
   }, 4000); // 4 detik
 }
 </script>
-
 </body>
 </html>
